@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1C2321;
+}
+
+
+.mainContent {
+    grid-column: 2 / 2;
+}
+
+.contact {}
+
+.header {
+    grid-column: 2 / 2;
+}
+
+.footer {
+    grid-column: 1 / span 3;
+    background-color: #4B6169;
+    text-align: center;
+}
+
+.button {
+    border: none;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    height: 25px;
+    width: 100px;
+    background-color: #EEF1EF;
+    margin-right: 10px;
+}
+
+.button:hover {
+    color: white;
+    background-color: #6D8294;
+}
+  

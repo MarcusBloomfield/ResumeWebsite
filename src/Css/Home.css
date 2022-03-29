@@ -1,0 +1,25 @@
+.homeCore {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 5fr 1fr;
+    grid-template-columns: 2fr 2.7fr 2fr;
+    align-items: center;
+    background-color: #1C2321;
+    color: #EEF1EF;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.projectTile{
+    background-color: #314142;
+    text-align: center;
+  }
+  .allProjectTiles{
+  }
+  .externalLinks{
+  }
+  .greeting{
+    grid-column: 2/2;
+  }
+  .navBar {
+    grid-column: 2/2;
+}
