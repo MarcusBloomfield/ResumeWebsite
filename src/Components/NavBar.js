@@ -17,7 +17,7 @@ function NavBar({className}) {
     return <div className ={className}>
     <button className = "button" onClick={GotoMyHome}> Home </button>
     <button className = "button" onClick={GotoMyAboutMe}> About Me </button>
-    <button className = "button"> MyProjects  </button>
+    <button className = "button" onClick={GotoMyProjects}> MyProjects  </button>
     </div>
 }
 

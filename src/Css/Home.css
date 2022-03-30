@@ -5,9 +5,9 @@
     grid-template-rows: 1fr 1fr 5fr 1fr;
     grid-template-columns: 2fr 2.7fr 2fr;
     align-items: center;
-    background-color: #1C2321;
     color: #EEF1EF;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    z-index: 100; 
 }
 .projectTile{
     background-color: #314142;
@@ -22,4 +22,10 @@
   }
   .navBar {
     grid-column: 2/2;
+}
+.homeCanvas{
+    grid-column: 1/1;
+}
+.HomeContainer{
+    z-index: 100;
 }
