@@ -1,50 +1,31 @@
-import MyFooter from "./Components/MyFooter";
-import MyHeader from "./Components/MyHeader";
-import MyMainContent from "./Components/MyMainContent";
 import { Canvas, applyProps, useFrame } from '@react-three/fiber'
-import { useThree } from "@react-three/fiber";
 import "./Css/MyProjects.css";
 import * as THREE from 'three'
-import { useMemo, useRef } from 'react'
-import { OrbitControls, Bounds, BakeShadows } from '@react-three/drei'
+import { Suspense } from 'react'
+import { OrbitControls, BakeShadows } from '@react-three/drei'
+import Bone from "./Models/Bone.js"
+import Marcus from "./Models/Marcus.js"
+import React, { useRef, useState } from 'react'
 
-function MyProjects() {
+function MyProjects(props) {
   return (
     <div className="MyProjects">
-      <Canvas camera={{ position: [-10, 5, 15], fov: 5 }}>
+      <Canvas camera={{ position: [-10, 5, 25], fov: 5 }}>
         <color attach="background" args={['#4B6169']} />
-        <OrbitControls
-          makeDefault
-          minAzimuthAngle={0}
-          maxAzimuthAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 3}
-          maxPolarAngle={Math.PI / 3}
-          enableZoom={true}
-          enablePan={true}
-          zoomSpeed={1}
-        />
+        <OrbitControls />
         <ambientLight intensity={0.1} />
-        <directionalLight color="red" position={[0, 0, 5]} />
-        {
-          box()
-        }
-
+        <directionalLight color="White" position={[0, 0, 5]} />
+        <Suspense fallback={null}>
+          <Marcus position={[2, -1, 0]} />
+          <Bone position={[-2, 0, 0]} />
+        </Suspense >
         <BakeShadows />
         <CameraRig />
       </Canvas>
     </div>
   );
 }
-function box() {
-  return (
-    <mesh>
-      <boxGeometry />
-      <meshStandardMaterial />
-    </mesh>
-  );
-
-}
-function CameraRig({ v = new THREE.Vector3() }) {
+function CameraRig() {
   return useFrame((state) => {
     const t = state.clock.elapsedTime
     state.camera.lookAt(0, 0, 0)
