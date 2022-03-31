@@ -3,16 +3,18 @@ import MyMainContent from "./Components/MyMainContent";
 import Greeting from "./Components/Greating";
 import MyHeader from "./Components/MyHeader";
 import NavBar from "./Components/NavBar";
-import MyProjects from "./MyProjects";
+import HomeScene from "./HomeScene";
 
 function Home() {
     return (
         <div className="HomeContainer">
-            <MyProjects />
+            <HomeScene />
+            <div className="header">
+                <MyHeader className="animate__animated animate__bounceInLeft" />
+                <NavBar className="navBar animate__animated animate__bounceInLeft" />
+                <Greeting className="greeting animate__animated animate__bounceInLeft" />
+            </div>
             <div className="homeCore" >
-                <MyHeader className="header" />
-                <NavBar className="navBar" />
-                <Greeting className="greeting" />
                 <MyMainContent className="mainContent" />
                 <MyFooter className="footer" />
             </div>
@@ -20,4 +22,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Home;    

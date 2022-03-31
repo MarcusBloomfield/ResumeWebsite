@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import reactDom from "react-dom"
 import YouTube from "react-youtube"
 
@@ -8,10 +8,10 @@ class Example extends Component {
   VideoOnEnd(event) {
     event.target.playVideo();
   }
-    render() {
+  render() {
     const options = {
-      height: '480',
-      width: '800',
+      height: '240',
+      width: '426',
       playerVars: {
         autoplay: 1,
         mute: this.props.streetSound ? 0 : 1,
@@ -20,7 +20,7 @@ class Example extends Component {
         playbackSpeed: this.props.playbackSpeed
       },
     };
-    const {videoId} = this.props;
+    const { videoId } = this.props;
     return <YouTube videoId={videoId} opts={options} onEnd={this.VideoOnEnd} />;
   }
 }
