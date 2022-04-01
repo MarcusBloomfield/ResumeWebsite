@@ -38,8 +38,7 @@ function AllProjectTiles() {
             name="Rts Airport"
             videoId="J7CcvQZNSTU"
             description="A small simulation of jets taxing and taking off from an airport then landing again.
-        The jets use physcis based movement and a waypoint system to navigate around the world.
-        "
+            The jets use physcis based movement and a waypoint system to navigate around the world."
         />
     </div>;
 }
