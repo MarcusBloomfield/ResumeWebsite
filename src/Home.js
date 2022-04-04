@@ -15,7 +15,6 @@ function Home() {
                 <Greeting className="greeting animate__animated animate__bounceInLeft" />
             </div>
             <div className="homeCore" >
-                <MyMainContent className="mainContent" />
                 <MyFooter className="footer" />
             </div>
         </div>
