@@ -74,6 +74,12 @@ export default class AllProjectCubes extends React.Component {
                 TextFront="The bane of my heart."
                 ass={this.handleChange}
             />
+
+            <ProjectCube cubePosition={[0, 10, 0]} cubeRotation={[0, 0, 0]} cubeScale={[3, 3, 3]} htmlPositionFront={[0, 0, 1.51]} htmlRotationFront={[0, 0, 0]}
+                TitleFront="FAQ"
+                TextFront="aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                ass={this.handleChange}
+            />
         </group>
     }
 

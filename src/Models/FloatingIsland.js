@@ -8,7 +8,10 @@ import { useGLTF } from '@react-three/drei'
 export default function Model({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/FloatingIsland.gltf')
-  useFrame((state, delta) => (group.current.position.y = Math.sin(state.clock.getElapsedTime()) / 8))
+  useFrame((state, delta) => (
+    group.current.position.y = props.yOrigin + Math.sin(state.clock.getElapsedTime()) / 8,
+    group.current.rotation.y += .6 * delta
+    ))
   return (
     <group ref={group} {...props} dispose={null} scale={[.5, .5, .5]}>
       <group position={[-0.08, 0.2, 0.57]} rotation={[0, 0.95, 0]} scale={[0.06, 0.1, 0.06]}>
