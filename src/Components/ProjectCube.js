@@ -67,7 +67,7 @@ export default class ProjectCube extends React.Component {
                 </div>
 
             </Html>
-            <Html transform position={this.props.htmlPositionBottom} rotation={this.props.htmlRotationBottom} occlude >
+            <Html transform position={this.props.htmlPositionBottom} rotation={this.props.htmlRotationBottom} occlude>
                 <div className='cube animate__animated animate__fadeIn' onClick={this.fuckbitchslut} onPointerEnter={this.hoverColor} onPointerLeave={this.normalColor}>
                     <h1> {this.props.TitleBottom} </h1>
                     {this.props.TextBottom}

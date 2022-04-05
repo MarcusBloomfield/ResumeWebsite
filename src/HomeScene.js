@@ -18,6 +18,12 @@ import YouTubePlayer from './Components/YouTubePlayer.js'
 import AllProjectCubes from './Components/AllProjectCubes';
 import { Vector3 } from 'three';
 import { Text, TrackballControls } from '@react-three/drei'
+import { Sky } from '@react-three/drei'
+import ILOVEPROGRAMMING from './Models/ILOVEPROGRAMMING.js'
+import HideTent from './Models/HideTent.js'
+import TPGTurret from './Models/TPGTurret.js'
+import WoodHouseWoodRoof from './Models/WoodHouseWoodRoof.js'
+import LinkCube from './Components/LinkCube.js';
 
 class HomeScene extends React.Component {
   constructor(props) {
@@ -36,7 +42,7 @@ class HomeScene extends React.Component {
   render() {
     return (
       <div className="myProjects">
-        <Canvas camera={{ position: [-10, 5, 25], fov: 11 }}>
+        <Canvas camera={{ position: [-10, 5, 25], fov: 11, near: 1, far: 500 }}>
           <color attach="background" args={['#4B6169']} />
           <CustomCameraRig cubePosX={this.state.selectedCubePosition[0]} cubePosY={this.state.selectedCubePosition[1]} cubePosZ={this.state.selectedCubePosition[2]} />
           <ambientLight intensity={0.1} />
@@ -51,6 +57,11 @@ class HomeScene extends React.Component {
             <SingleEngine position={[4, 1.7, 0]} rotationAmount={0.001} />
             <FlyingJet position={[-7, -1, 3]} />
             <AllProjectCubes position={[0, 0, 0]} ass={this.handleChange} />
+            <ILOVEPROGRAMMING yOrigin={5} />
+            <TPGTurret />
+            <WoodHouseWoodRoof />
+            <HideTent />
+            <LinkCube cubePosition={[1, 2, -1]} />
           </Suspense >
           <BakeShadows />
         </Canvas>
@@ -64,16 +75,16 @@ function CustomCameraRig({ ...props }) {
   const ref = useRef()
   // this is unholy
   useFrame((state, delta) => (
-    Math.abs(ref.current.target.z - props.cubePosZ) < .1 ? ref.current.target : ref.current.target.z > props.cubePosZ ? ref.current.target.z -= 22 * delta : ref.current.target.z += 22 * delta,
-    Math.abs(ref.current.target.x - props.cubePosX) < .1 ? ref.current.target : ref.current.target.x > props.cubePosX ? ref.current.target.x -= 22 * delta : ref.current.target.x += 22 * delta,
-    Math.abs(ref.current.target.y - props.cubePosY) < .1 ? ref.current.target : ref.current.target.y > props.cubePosY ? ref.current.target.y -= 22 * delta : ref.current.target.y += 22 * delta,
-    console.log("pos x", props.cubePosX, "pos z", props.cubePosZ)
+    Math.abs(ref.current.target.z - props.cubePosZ) < .1 ? ref.current.target : ref.current.target.z > props.cubePosZ ? ref.current.target.z -= 1 * Math.abs(ref.current.target.z - props.cubePosZ) * delta : ref.current.target.z += 1 * Math.abs(ref.current.target.z - props.cubePosZ) * delta,
+    Math.abs(ref.current.target.x - props.cubePosX) < .1 ? ref.current.target : ref.current.target.x > props.cubePosX ? ref.current.target.x -= 1 * Math.abs(ref.current.target.x - props.cubePosX) * delta : ref.current.target.x += 1 * Math.abs(ref.current.target.x - props.cubePosX) * delta,
+    Math.abs(ref.current.target.y - props.cubePosY) < .1 ? ref.current.target : ref.current.target.y > props.cubePosY ? ref.current.target.y -= 1 * Math.abs(ref.current.target.y - props.cubePosY) * delta : ref.current.target.y += 1 * Math.abs(ref.current.target.y - props.cubePosY) * delta
   ))
 
   return (
     <OrbitControls ref={ref} minDistance={39} maxDistance={333} zoomSpeed={4} makeDefault />
   )
 }
+
 
 function Sphere(props) {
   const ref = useRef()
