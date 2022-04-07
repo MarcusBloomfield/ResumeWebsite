@@ -24,6 +24,11 @@ import HideTent from './Models/HideTent.js'
 import TPGTurret from './Models/TPGTurret.js'
 import WoodHouseWoodRoof from './Models/WoodHouseWoodRoof.js'
 import LinkCube from './Components/LinkCube.js';
+import Billboard from './Models/BillBoard.js';
+import PCSetupIsland from './Models/PCSetupIsland.js'
+import { Camera } from 'three';
+import FarmerMarcus from './Models/FarmerMarcus.js'
+import TwoStory from './Models/TwoStory.js'
 
 class HomeScene extends React.Component {
   constructor(props) {
@@ -48,20 +53,20 @@ class HomeScene extends React.Component {
           <ambientLight intensity={0.1} />
           <directionalLight color="White" position={[0, 0, 5]} intensity={0.5} castShadow />
           <Suspense fallback={null}>
-            <FloatingIsland position={[-3, 0, 0]} rotationAmount={.002} yOrigin={0} />
+            <PCSetupIsland position={[-3, 0, 0]} scale={[.5, .5, .5]} rotationAmount={-.002} yOrigin={0} />
             <FloatingIsland position={[-3.5, 1, 0]} rotationAmount={-.002} yOrigin={1} />
             <FloatingIsland position={[-3.5, -1, 0]} rotationAmount={-.002} yOrigin={-1} />
             <LittleHouse position={[4, 0, 0]} />
-            <Deer position={[4.3, -2, 0]} />
-            <DeerF position={[4, -2, 0]} />
+            <Deer position={[21.2, .87, -12.5]} />
+            <DeerF position={[21, .87, -12.5]} />
+            <HideTent position={[22, 1.51, -13.8]} />
+            <TwoStory position={[22.7, 1.51, -13.2]} rotation={[0, -.8, 0]} />
             <SingleEngine position={[4, 1.7, 0]} rotationAmount={0.001} />
-            <FlyingJet position={[-7, -1, 3]} />
+            <FlyingJet position={[-7, -1, 3]} xOffset={0} zOffset={0} />
             <AllProjectCubes position={[0, 0, 0]} ass={this.handleChange} />
             <ILOVEPROGRAMMING yOrigin={5} />
-            <TPGTurret />
-            <WoodHouseWoodRoof />
-            <HideTent />
-            <LinkCube cubePosition={[1, 2, -1]} />
+            <Billboard position={[5, -3, 4]} rotation={[0, -2, 0]} scale={[.5, .5, .5]} yOrigin={-3} />
+            <FarmerMarcus position={[22.1, 1.51, -13.2]} rotation={[0, -.3, 0]} />
           </Suspense >
           <BakeShadows />
         </Canvas>
@@ -74,14 +79,22 @@ class HomeScene extends React.Component {
 function CustomCameraRig({ ...props }) {
   const ref = useRef()
   // this is unholy
+  const [panSpeed, setPanSpeed] = useState(3)
+  let [zDifference, setZDifference] = useState(0)
+  let [xDifference, setXDifference] = useState(0)
+  let [yDifference, setYDifference] = useState(0)
   useFrame((state, delta) => (
-    Math.abs(ref.current.target.z - props.cubePosZ) < .1 ? ref.current.target : ref.current.target.z > props.cubePosZ ? ref.current.target.z -= 1 * Math.abs(ref.current.target.z - props.cubePosZ) * delta : ref.current.target.z += 1 * Math.abs(ref.current.target.z - props.cubePosZ) * delta,
-    Math.abs(ref.current.target.x - props.cubePosX) < .1 ? ref.current.target : ref.current.target.x > props.cubePosX ? ref.current.target.x -= 1 * Math.abs(ref.current.target.x - props.cubePosX) * delta : ref.current.target.x += 1 * Math.abs(ref.current.target.x - props.cubePosX) * delta,
-    Math.abs(ref.current.target.y - props.cubePosY) < .1 ? ref.current.target : ref.current.target.y > props.cubePosY ? ref.current.target.y -= 1 * Math.abs(ref.current.target.y - props.cubePosY) * delta : ref.current.target.y += 1 * Math.abs(ref.current.target.y - props.cubePosY) * delta
+    setXDifference(Math.abs(ref.current.target.x - props.cubePosX)),
+    setYDifference(Math.abs(ref.current.target.y - props.cubePosY)),
+    setZDifference(Math.abs(ref.current.target.z - props.cubePosZ)),
+
+    xDifference < .1 ? ref.current.target : ref.current.target.x > props.cubePosX ? ref.current.target.x -= panSpeed * xDifference * delta : ref.current.target.x += panSpeed * xDifference * delta,
+    yDifference < .1 ? ref.current.target : ref.current.target.y > props.cubePosY ? ref.current.target.y -= panSpeed * yDifference * delta : ref.current.target.y += panSpeed * yDifference * delta,
+    zDifference < .1 ? ref.current.target : ref.current.target.z > props.cubePosZ ? ref.current.target.z -= panSpeed * zDifference * delta : ref.current.target.z += panSpeed * zDifference * delta
   ))
 
   return (
-    <OrbitControls ref={ref} minDistance={39} maxDistance={333} zoomSpeed={4} makeDefault />
+    <OrbitControls ref={ref} minDistance={39} maxDistance={170} zoomSpeed={4} makeDefault />
   )
 }
 

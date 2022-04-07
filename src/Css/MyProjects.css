@@ -25,3 +25,23 @@
     height: 100px;
     width: 100px;
 }
+
+.switchCube {
+    font-size: 1.5px;
+    height: 6px;
+    width: 12px;
+    text-align: center;
+}
+
+.projectCubeHtml {
+    height: 100px;
+    width: 100px;
+}
+
+.billBoard {
+    font-size: 11px;
+    height: 11px;
+    width: 99px;
+    text-align: center;
+
+}

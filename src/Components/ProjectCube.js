@@ -32,7 +32,7 @@ export default class ProjectCube extends React.Component {
             rotation={this.props.cubeRotation}>
             <boxGeometry args={this.props.cubeScale} onPointerEnter={this.hoverColor} />
             <meshStandardMaterial color={this.state.color} onPointerEnter={this.hoverColor} />
-            <Html transform position={this.props.htmlPositionFront} rotation={this.props.htmlRotationFront} occlude >
+            <Html className='projectCubeHtml' transform position={this.props.htmlPositionFront} rotation={this.props.htmlRotationFront} occlude >
                 <div className='cube animate__animated animate__fadeIn' onClick={this.fuckbitchslut} onPointerEnter={this.hoverColor} onPointerLeave={this.normalColor}>
                     <h1> {this.props.TitleFront} </h1>
                     {this.props.TextFront}

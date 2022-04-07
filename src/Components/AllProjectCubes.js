@@ -1,5 +1,6 @@
 import ProjectCube from './ProjectCube';
 import React, { useRef, useState } from 'react'
+import SwitchCube from './SwitchCube.js'
 
 export default class AllProjectCubes extends React.Component {
     constructor(props) {
@@ -12,6 +13,13 @@ export default class AllProjectCubes extends React.Component {
 
     render() {
         return <group>
+            <SwitchCube cubePosition={[1.3, 1.9, -1]} cubeRotation={[0, -.5, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[22, 0, -12.5]} ass={this.handleChange} Title="HardShip" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
+            <SwitchCube cubePosition={[-1.3, 1.9, -1]} cubeRotation={[0, .5, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[-22, 0, -12.5]} ass={this.handleChange} Title="AirPort" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
+            <SwitchCube cubePosition={[.4, 1.9, -1.3]} cubeRotation={[0, 0, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[8, 0, -21]} ass={this.handleChange} Title="About" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
+            <SwitchCube cubePosition={[-.4, 1.9, -1.3]} cubeRotation={[0, 0, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[-8, 0, -21]} ass={this.handleChange} Title="TPG" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
+            <SwitchCube cubePosition={[-.9, 2.5, -1.2]} cubeRotation={[0, .35, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[-16, 8, -18]} ass={this.handleChange} Title="ZomBoy" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
+            <SwitchCube cubePosition={[.9, 2.5, -1.2]} cubeRotation={[0, -.35, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[16, 8, -18]} ass={this.handleChange} Title="Island Gen" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
+
             <ProjectCube cubePosition={[0, 0, 0]} cubeRotation={[0, 0, 0]} cubeScale={[3, 3, 3]}
                 htmlPositionFront={[0, 0, 1.51]} htmlRotationFront={[0, 0, 0]}
                 htmlPositionLeft={[1.51, 0, 0]} htmlRotationLeft={[0, 1.57, 0]}
@@ -23,17 +31,16 @@ export default class AllProjectCubes extends React.Component {
                 TitleFront="Home"
                 TitleRight="fuck"
                 TitleLeft="Cunt"
-                TextFront="Hold Left Click and move the mouse to move the camera."
-                TextLeft="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                TextFront="Hold Left Click and move the mouse to move the camera. Click on a project cube to go to it or click the little cubes with names to go to a project cube. Use scroll wheel to zoom in."
+                TextLeft="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  aaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
                 TextRight="aaaaaaaaaaaaaaaaaaaaaaaaweeee"
                 TextBack="FAQ"
                 TitleTop="FAQ"
                 TextTop="FAQ"
-                TitleBottom="FAQ"
-                TextBottom="FAQ"
                 ass={this.handleChange}
             />
 
+            <SwitchCube cubePosition={[-7, 1.9, -21]} cubeRotation={[0, 0, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[0, 0, 0]} ass={this.handleChange} Title="Home" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
             <ProjectCube cubePosition={[-8, 0, -21]} cubeRotation={[0, .4, 0]} cubeScale={[3, 3, 3]}
                 htmlPositionFront={[0, 0, 1.51]} htmlRotationFront={[0, 0, 0]}
                 htmlPositionLeft={[1.51, 0, 0]} htmlRotationLeft={[0, 1.57, 0]}
@@ -54,11 +61,10 @@ export default class AllProjectCubes extends React.Component {
                 TextBack="FAQ"
                 TitleTop="FAQ"
                 TextTop="FAQ"
-                TitleBottom="FAQ"
-                TextBottom="FAQ"
                 ass={this.handleChange}
             />
 
+            <SwitchCube cubePosition={[9, 1.9, -21]} cubeRotation={[0, 0, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[0, 0, 0]} ass={this.handleChange} Title="Home" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
             <ProjectCube cubePosition={[8, 0, -21]} cubeRotation={[0, -.4, 0]} cubeScale={[3, 3, 3]}
                 htmlPositionFront={[0, 0, 1.51]} htmlRotationFront={[0, 0, 0]}
                 htmlPositionLeft={[1.51, 0, 0]} htmlRotationLeft={[0, 1.57, 0]}
@@ -80,11 +86,10 @@ export default class AllProjectCubes extends React.Component {
                 TextBack="FAQ"
                 TitleTop="FAQ"
                 TextTop="FAQ"
-                TitleBottom="FAQ"
-                TextBottom="FAQ"
                 ass={this.handleChange}
             />
 
+            <SwitchCube cubePosition={[17, 9.9, -18]} cubeRotation={[0, 0, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[0, 0, 0]} ass={this.handleChange} Title="Home" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
             <ProjectCube cubePosition={[16, 8, -18]} cubeRotation={[0, -.6, 0]} cubeScale={[3, 3, 3]}
                 htmlPositionFront={[0, 0, 1.51]} htmlRotationFront={[0, 0, 0]}
                 htmlPositionLeft={[1.51, 0, 0]} htmlRotationLeft={[0, 1.57, 0]}
@@ -105,11 +110,10 @@ export default class AllProjectCubes extends React.Component {
                 TextBack="FAQ"
                 TitleTop="FAQ"
                 TextTop="FAQ"
-                TitleBottom="FAQ"
-                TextBottom="FAQ"
                 ass={this.handleChange}
             />
 
+            <SwitchCube cubePosition={[-15, 9.9, -18]} cubeRotation={[0, 0, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[0, 0, 0]} ass={this.handleChange} Title="Home" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
             <ProjectCube cubePosition={[-16, 8, -18]} cubeRotation={[0, .7, 0]} cubeScale={[3, 3, 3]}
                 htmlPositionFront={[0, 0, 1.51]} htmlRotationFront={[0, 0, 0]}
                 htmlPositionLeft={[1.51, 0, 0]} htmlRotationLeft={[0, 1.57, 0]}
@@ -133,11 +137,10 @@ export default class AllProjectCubes extends React.Component {
                 TextBack="FAQ"
                 TitleTop="FAQ"
                 TextTop="FAQ"
-                TitleBottom="FAQ"
-                TextBottom="FAQ"
                 ass={this.handleChange}
             />
 
+            <SwitchCube cubePosition={[-21, 1.9, -12.5]} cubeRotation={[0, 0, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[0, 0, 0]} ass={this.handleChange} Title="Home" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
             <ProjectCube cubePosition={[-22, 0, -12.5]} cubeRotation={[0, .8, 0]} cubeScale={[3, 3, 3]}
                 htmlPositionFront={[0, 0, 1.51]} htmlRotationFront={[0, 0, 0]}
                 htmlPositionLeft={[1.51, 0, 0]} htmlRotationLeft={[0, 1.57, 0]}
@@ -157,12 +160,10 @@ export default class AllProjectCubes extends React.Component {
                 TextBack="FAQ"
                 TitleTop="FAQ"
                 TextTop="FAQ"
-                TitleBottom="FAQ"
-                TextBottom="FAQ"
                 ass={this.handleChange}
             />
 
-
+            <SwitchCube cubePosition={[23.5, 1.9, -12.5]} cubeRotation={[0, 0, 0]} cubeScale={[.4, .4, .4]} destinationPosition={[0, 0, 0]} ass={this.handleChange} Title="Home" htmlPosition={[0, 0, .21]} htmlRotation={[0, 0, 0]} />
             <ProjectCube cubePosition={[22, 0, -12.5]} cubeRotation={[0, -.8, 0]} cubeScale={[3, 3, 3]}
                 htmlPositionFront={[0, 0, 1.51]} htmlRotationFront={[0, 0, 0]}
                 htmlPositionLeft={[1.51, 0, 0]} htmlRotationLeft={[0, 1.57, 0]}
@@ -181,8 +182,6 @@ export default class AllProjectCubes extends React.Component {
                 TextBack="FAQ"
                 TitleTop="FAQ"
                 TextTop="FAQ"
-                TitleBottom="FAQ"
-                TextBottom="FAQ"
                 ass={this.handleChange}
             />
         </group>

@@ -9,7 +9,7 @@ export default function Model({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/HideTent.gltf')
   return (
-    <group ref={group} {...props} dispose={null} scale={[.1, .1, .1]} position={[0, 7, 0]}>
+    <group ref={group} {...props} dispose={null} scale={[.1, .1, .1]}>
       <group position={[0.04, -0.25, 0.01]} rotation={[Math.PI, -1.54, Math.PI]} scale={[1.87, 1.69, 1.96]}>
         <mesh geometry={nodes.Cone003.geometry} material={materials.Material} />
         <mesh geometry={nodes.Cone003_1.geometry} material={materials['Material.001']} />

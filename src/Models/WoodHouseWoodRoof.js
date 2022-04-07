@@ -9,7 +9,7 @@ export default function Model({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF('/WoodHouseWoodRoof.gltf')
   return (
-    <group ref={group} {...props} dispose={null} scale={[.1, .1, .1]} position={[0, 6, 0]}>
+    <group ref={group} {...props} dispose={null} scale={[.1, .1, .1]}>
       <group position={[0, -0.1, 0]} scale={[6.5, 0.23, 4.6]}>
         <mesh geometry={nodes.Icosphere_1.geometry} material={materials['Material.083']} />
         <mesh geometry={nodes.Icosphere_2.geometry} material={materials['Material.507']} />

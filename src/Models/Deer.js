@@ -12,7 +12,7 @@ export default function Model({ ...props }) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group>
-        <group position={[0, 0.74, -0.66]} scale={[.3,.3,.3]}>
+        <group position={[0, 0.74, -0.66]} scale={[.15, .15, .15]}>
           <primitive object={nodes.Spine} />
           <primitive object={nodes.backlegIKL} />
           <primitive object={nodes.PullTargetBackL} />
