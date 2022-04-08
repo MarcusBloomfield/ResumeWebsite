@@ -11,6 +11,7 @@ export default function Model({ ...props }) {
   let [time, timer] = useState(0)
   let [circle, circleSize] = useState(10)
   const [speed, jetSpeed] = useState(4)
+
   useFrame((state, delta) => (
     time += 1 * delta,
     circle = 10 + (Math.sin(time) * 5),
@@ -18,6 +19,7 @@ export default function Model({ ...props }) {
     group.current.position.z = props.zOffset + Math.cos(time * speed) * circle,
     group.current.rotation.y = Math.atan2(Math.sin(time * speed) * circle, Math.cos(time * speed) * circle)
   ))
+  
   return (
     <group ref={group} {...props} dispose={null} scale={[.2, .2, .2]}>
       <group rotation={[-1, 0, -Math.PI / 2]} scale={[0.17, 1.12, 0.17]}>
