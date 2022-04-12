@@ -9,13 +9,6 @@ body {
 }
 
 
-.mainContent {
-    grid-column: 2 / 2;
-    grid-row: 5/5;
-}
-
-.contact {}
-
 .header {
     color: #EEF1EF;
     font-family: 'Gill Sans',
@@ -48,8 +41,4 @@ body {
 .button:hover {
     color: white;
     background-color: #6D8294;
-}
-
-.App {
-    z-index: 100;
 }

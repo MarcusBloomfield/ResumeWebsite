@@ -1,5 +1,5 @@
 import ProjectCube from './ProjectCube';
-import React, { useRef, useState } from 'react'
+import React from 'react'
 import SwitchCube from './SwitchCube.js'
 
 export default class AllProjectCubes extends React.Component {
@@ -80,8 +80,14 @@ export default class AllProjectCubes extends React.Component {
             Every problem has a solution, I hope I am always as excited as I am today to solve them."
                 TitleLeft="How I Started Programming"
                 TextLeft="FAQ"
-                TitleRight="GameDev Or Programming"
-                TextRight="FAQ"
+                TitleRight="EXPERIENCE"
+                TextRight=" 2018 - Current Unity, C# Developer In 2019 my first app launched on the Google Play Store.
+                I have also been learning how to market products using Google Ads in order to reach a larger audience with this and future releases.
+                I have also been working on smaller side projects which include smaller games and react based websites as well as my passion project. My passion project is a city building strategy game that has an in-game intelligence system, which is intended to allow for a greater level of realism. Making games is a huge challenge but I welcome it.
+                Current Blender, 3D Modeler and Animator When creating games for my unity projects, I came across the obstacle of the limited library unity offered. 
+                I taught myself how to use Blender, now I’m experienced with its interface, 3D modelling methods and animation. 
+                2018 - Current Self-Taught 2020 - 2021 Certificate IV in Programming, UpSkilled I have completed a certificate four in programming. 
+                In this course I learn agile development processes, application documentation, .Net, C#, SQL and Xamarin."
                 TitleBack="vFAQ"
                 TextBack="FAQ"
                 TitleTop="FAQ"

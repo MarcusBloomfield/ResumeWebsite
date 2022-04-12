@@ -1,5 +1,5 @@
 import { Canvas, useFrame } from '@react-three/fiber'
-import "./Css/MyProjects.css";
+import "./Css/HomeScene.css";
 import { OrbitControls, BakeShadows } from '@react-three/drei'
 import React, { useRef, useState, Suspense } from 'react'
 import AllProjectCubes from './Components/AllProjectCubes';
@@ -17,12 +17,11 @@ class HomeScene extends React.Component {
 
   handleChange(newPos) {
     this.setState({ selectedCubePosition: newPos })
-    console.log("fuck you btich", this.state.selectedCubePosition)
   }
 
   render() {
     return (
-      <div className="myProjects">
+      <div className="homeScene">
         <Canvas camera={{ position: [-10, 5, 25], fov: 11, near: 1, far: 500 }}>
           <color attach="background" args={['#4B6169']} />
           <CustomCameraRig cubePosX={this.state.selectedCubePosition[0]} cubePosY={this.state.selectedCubePosition[1]} cubePosZ={this.state.selectedCubePosition[2]} />

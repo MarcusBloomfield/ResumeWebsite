@@ -1,6 +1,3 @@
-import react from "react";
-import reactDom from "react-dom"
-
 function ExternalLinks() {
     return <div>
         <>

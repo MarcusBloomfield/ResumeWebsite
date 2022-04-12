@@ -1,6 +1,3 @@
-import react from "react";
-import reactDom from "react-dom";
-
 function Greeting({ className }) {
     const date = new Date();
     const hours = date.getHours();

@@ -1,5 +1,3 @@
-import MyFooter from "./Components/MyFooter";
-import MyMainContent from "./Components/MyMainContent";
 import Greeting from "./Components/Greating";
 import MyHeader from "./Components/MyHeader";
 import NavBar from "./Components/NavBar";
@@ -13,9 +11,6 @@ function Home() {
                 <MyHeader className="animate__animated animate__bounceInLeft" />
                 <NavBar className="navBar animate__animated animate__bounceInLeft" />
                 <Greeting className="greeting animate__animated animate__bounceInLeft" />
-            </div>
-            <div className="homeCore" >
-                <MyFooter className="footer" />
             </div>
         </div>
     );
