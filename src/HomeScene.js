@@ -4,6 +4,7 @@ import { OrbitControls, BakeShadows } from '@react-three/drei'
 import React, { useRef, useState, Suspense } from 'react'
 import AllProjectCubes from './Components/AllProjectCubes';
 import Decorations from './Components/Decorations';
+import AllSwitchCubes from './Components/AllSwitchCubes';
 
 class HomeScene extends React.Component {
   constructor(props) {
@@ -28,7 +29,8 @@ class HomeScene extends React.Component {
           <ambientLight intensity={0.1} />
           <directionalLight color="White" position={[0, 0, 5]} intensity={0.5} castShadow />
           <Suspense fallback={null}>
-            <AllProjectCubes position={[0, 0, 0]} ass={this.handleChange} />
+            <AllProjectCubes position={[0, 0, 0]} targetPosition={this.handleChange} />
+            <AllSwitchCubes position={[0, 0, 0]} targetPosition={this.handleChange} />
             <Decorations position={[0, 0, 0]} />
           </Suspense >
           <BakeShadows />
