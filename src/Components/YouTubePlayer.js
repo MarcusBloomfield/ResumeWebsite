@@ -3,6 +3,10 @@ import YouTube from "react-youtube"
 
 class Example extends Component {
 
+  constructor() {
+    super();
+    this.VideoOnEnd = this.VideoOnEnd.bind(this);
+  }
 
   VideoOnEnd(event) {
     event.target.playVideo();
