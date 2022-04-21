@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/SingleEngine.gltf')
+  const { nodes, materials } = useGLTF('/ResumeWebsite/SingleEngine.gltf')
   useFrame((state, delta) => (group.current.rotation.z += props.rotationAmount))
   useFrame((state, delta) => (group.current.rotation.y += props.rotationAmount))
   return (
@@ -27,4 +27,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/SingleEngine.gltf')
+useGLTF.preload('/ResumeWebsite/SingleEngine.gltf')

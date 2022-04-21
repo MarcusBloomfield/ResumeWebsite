@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/FloatingIsland.gltf')
+  const { nodes, materials } = useGLTF('/ResumeWebsite/FloatingIsland.gltf')
   useFrame((state, delta) => (
     group.current.position.y = props.yOrigin + Math.sin(state.clock.getElapsedTime()) / 8,
     group.current.rotation.y += .6 * delta
@@ -103,4 +103,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/FloatingIsland.gltf')
+useGLTF.preload('/ResumeWebsite/FloatingIsland.gltf')

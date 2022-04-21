@@ -7,7 +7,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/deerF.gltf')
+  const { nodes, materials, animations } = useGLTF('/ResumeWebsite/deerF.gltf')
   const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
@@ -29,4 +29,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/deerF.gltf')
+useGLTF.preload('/ResumeWebsite/deerF.gltf')

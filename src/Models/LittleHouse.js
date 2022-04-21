@@ -8,7 +8,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/LittleHouse.gltf')
+  const { nodes, materials } = useGLTF('/ResumeWebsite/LittleHouse.gltf')
   useFrame((state, delta) => (group.current.rotation.y += 0.002))
   return (
     <group ref={group} {...props} dispose={null} scale={[.05, .05, .05]}>
@@ -27,4 +27,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/LittleHouse.gltf')
+useGLTF.preload('/ResumeWebsite/LittleHouse.gltf')

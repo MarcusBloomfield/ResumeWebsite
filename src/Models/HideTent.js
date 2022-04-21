@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/HideTent.gltf')
+  const { nodes, materials } = useGLTF('/ResumeWebsite/HideTent.gltf')
   return (
     <group ref={group} {...props} dispose={null} scale={[.1, .1, .1]}>
       <group position={[0.04, -0.25, 0.01]} rotation={[Math.PI, -1.54, Math.PI]} scale={[1.87, 1.69, 1.96]}>
@@ -19,4 +19,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/HideTent.gltf')
+useGLTF.preload('/ResumeWebsite/HideTent.gltf')

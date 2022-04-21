@@ -14,7 +14,7 @@ import MusketMan from '../Models/MusketMan.js'
 import MinerMarcus from '../Models/MinerMarcus.js'
 import MinerIsland from '../Models/MinerIsland.js'
 
-export default function Decoration({ ...props }) {
+export default function Decoration() {
     return <>
         <PCSetupIsland position={[-3, 0, 0]} scale={[.5, .5, .5]} rotationAmount={-.002} yOrigin={0} />
         <FloatingIsland position={[-3.5, 1, 0]} rotationAmount={-.002} yOrigin={1} />

@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/SingleEngine.gltf')
+  const { nodes, materials } = useGLTF('/ResumeWebsite/SingleEngine.gltf')
   let [time, timer] = useState(0)
   let [circle, circleSize] = useState(10)
   const [speed, jetSpeed] = useState(4)
@@ -37,4 +37,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/SingleEngine.gltf')
+useGLTF.preload('/ResumeWebsite/SingleEngine.gltf')

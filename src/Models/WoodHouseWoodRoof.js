@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/WoodHouseWoodRoof.gltf')
+  const { nodes, materials } = useGLTF('/ResumeWebsite/WoodHouseWoodRoof.gltf')
   return (
     <group ref={group} {...props} dispose={null} scale={[.1, .1, .1]}>
       <group position={[0, -0.1, 0]} scale={[6.5, 0.23, 4.6]}>
@@ -21,4 +21,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/WoodHouseWoodRoof.gltf')
+useGLTF.preload('/ResumeWebsite/WoodHouseWoodRoof.gltf')

@@ -8,7 +8,7 @@ import { useFrame } from '@react-three/fiber'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/BillBoard.gltf')
+  const { nodes, materials } = useGLTF('/ResumeWebsite/BillBoard.gltf')
   useFrame((state, delta) => (
     group.current.position.y = props.yOrigin + Math.sin(state.clock.getElapsedTime() * 1.1) / 8
   ))
@@ -55,4 +55,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/BillBoard.gltf')
+useGLTF.preload('/ResumeWebsite/BillBoard.gltf')

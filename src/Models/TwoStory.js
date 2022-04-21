@@ -7,7 +7,7 @@ import { useGLTF } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials } = useGLTF('/TwoStory.gltf')
+  const { nodes, materials } = useGLTF('/ResumeWebsite/TwoStory.gltf')
   return (
     <group ref={group} {...props} dispose={null} scale={.1}>
       <group position={[4.39, 3.57, 0.16]} rotation={[0, 1.57, 0]} scale={[0.16, 0.03, 0.01]}>
@@ -21,4 +21,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/TwoStory.gltf')
+useGLTF.preload('/ResumeWebsite/TwoStory.gltf')

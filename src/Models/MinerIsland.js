@@ -8,7 +8,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 export default function Model({ ...props }) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/MinerIsland.gltf')
+  const { nodes, materials, animations } = useGLTF('/ResumeWebsite/MinerIsland.gltf')
   const { actions } = useAnimations(animations, group)
   useFrame((state, delta) => (
     group.current.position.y = props.yOrigin + Math.sin(state.clock.getElapsedTime()) / 8,
@@ -109,4 +109,4 @@ export default function Model({ ...props }) {
   )
 }
 
-useGLTF.preload('/MinerIsland.gltf')
+useGLTF.preload('/ResumeWebsite/MinerIsland.gltf')
