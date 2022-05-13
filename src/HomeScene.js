@@ -23,7 +23,7 @@ class HomeScene extends React.Component {
   render() {
     return (
       <div className="homeScene">
-        <Canvas camera={{ position: [-10, 5, 25], fov: 45, near: 1, far: 500 }}>
+        <Canvas camera={{ position: [-10, 5, 25], fov: 11, near: 1, far: 500 }}>
           <color attach="background" args={['#4B6169']} />
           <ambientLight intensity={0.1} />
           <directionalLight color="White" position={[0, 0, 5]} intensity={0.5} castShadow />
@@ -31,6 +31,7 @@ class HomeScene extends React.Component {
             <AllProjectCubes position={[0, 0, 0]} targetPosition={this.handleChange} />
             <AllSwitchCubes position={[0, 0, 0]} targetPosition={this.handleChange} />
             <Decorations position={[0, 0, 0]} />
+            <CustomCameraRig cubePosX={this.state.selectedCubePosition[0]} cubePosY={this.state.selectedCubePosition[1]} cubePosZ={this.state.selectedCubePosition[2]} />
           </Suspense >
           <BakeShadows />
         </Canvas>
